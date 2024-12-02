@@ -1,0 +1,282 @@
+/* Base Styles */
+:root {
+    --scarlet: #FF2400;
+    --tangerine: #FF8C00;
+    --dark-blue: #003366;
+    --light-blue: #87CEEB;
+    --white: #FFFFFF;
+    --max-width: 1200px;
+}
+
+/* Universal Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    line-height: 1.6;
+    background-color: var(--dark-blue); /* Set background to dark blue */
+    color: var(--dark-blue);
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+/* Container for centered layout */
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Section Styles */
+section {
+    margin-bottom: 60px;
+    padding: 40px 20px;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+section.visible {
+    opacity: 1;
+}
+
+/* Section 1 (About) Styles */
+#about {
+    margin-top: 80px; /* Buffer between navbar and section */
+}
+
+.about-section {
+    display: flex;
+    justify-content: center; /* Ensure content is centered */
+    align-items: center;
+    text-align: left; /* Align text to the left */
+    flex-direction: row; /* Ensure image and text are side by side */
+    gap: 30px; /* Space between image and text */
+}
+
+.about-section img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.about-section p {
+    max-width: 500px;
+}
+
+.about-section h1 {
+    margin-bottom: 20px; /* Space between the name and the story text */
+    color: var(--dark-blue);
+    font-size: 2rem; /* Adjust the size if needed */
+}
+
+/* Section 2 (Works) Styles */
+#works {
+    padding: 60px 20px; /* Add padding for better spacing */
+}
+
+.project {
+    display: flex;
+    justify-content: center; /* Center the content */
+    align-items: center; /* Center vertically */
+    margin-bottom: 40px; /* Add spacing between project cards */
+    background-color: var(--light-blue); /* Background for project cards */
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Ensure the project takes up full width */
+    max-width: 1100px; /* Maximum width to prevent it from growing too wide */
+    margin-left: auto;
+    margin-right: auto; /* Center the card horizontally */
+    padding: 20px;
+    gap: 30px; /* Space between image and text */
+}
+
+.project img {
+    width: 150px; /* Fixed width for the image */
+    height: 150px; /* Fixed height for the image */
+    border-radius: 50%;
+    object-fit: cover; /* Ensure image fits within its dimensions */
+    margin-right: 20px; /* Space between image and text */
+}
+
+.project h3 {
+    width: 100%; /* Ensures the title spans across the whole container */
+    text-align: center; /* Centers the title */
+    margin-bottom: 15px; /* Adds space between the title and the image/text */
+    color: var(--dark-blue)
+}
+
+.project p {
+    margin-bottom: 20px;
+}
+
+.project button {
+    background-color: var(--dark-blue);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.project button:hover {
+    background-color: var(--scarlet);
+    color: var(--white);
+}
+
+/* Section 4 (Contact) Styles */
+#contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#contact img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+#contact form {
+    width: 100%;
+}
+
+#contact input,
+#contact textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--light-blue);
+}
+
+#contact button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--dark-blue);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+#contact button:hover {
+    background-color: var(--scarlet);
+}
+
+/* Scroll Animations */
+section {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+section.visible {
+    opacity: 1;
+}
+
+/* Resume Section */
+#resume {
+    background-color: var(--white);
+    padding: 40px 20px;
+    margin-bottom: 60px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#resume h2 {
+    margin-bottom: 20px;
+    color: var(--dark-blue);
+}
+
+#resume embed {
+    border-radius: 10px;
+}
+
+.download-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: var(--dark-blue);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.download-btn:hover {
+    background-color: var(--scarlet);
+}
+
+/* Navbar Styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--dark-blue);
+    padding: 15px;
+    z-index: 100;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navbar a {
+    color: var(--white);
+    font-size: 18px;
+    font-weight: 700;
+    margin-left: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 5px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    color: var(--tangerine); /* Hover effect on navbar links */
+}
+
+.navbar a.active {
+    color: var(--scarlet); /* Active link color */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-section,
+    .contact {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-section img,
+    .contact img {
+        margin-bottom: 20px;
+    }
+
+    .navbar {
+        justify-content: center;
+    }
+
+    .project {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .navbar a {
+        margin-left: 10px;
+        font-size: 16px;
+    }
+}
