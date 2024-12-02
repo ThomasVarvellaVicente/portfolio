@@ -8,7 +8,6 @@
     --max-width: 1200px;
 }
 
-/* Universal Styles */
 * {
     margin: 0;
     padding: 0;
@@ -24,7 +23,6 @@ body {
     padding: 0; /* Remove default padding */
 }
 
-/* Container for centered layout */
 .container {
     max-width: var(--max-width);
     margin: 0 auto;
@@ -32,7 +30,6 @@ body {
     text-align: center;
 }
 
-/* Section Styles */
 section {
     margin-bottom: 60px;
     padding: 40px 20px;
@@ -47,7 +44,7 @@ section.visible {
     opacity: 1;
 }
 
-/* Section 1 (About) Styles */
+/* Section 1 Styles */
 #about {
     margin-top: 80px; /* Buffer between navbar and section */
 }
@@ -78,7 +75,7 @@ section.visible {
     font-size: 2rem; /* Adjust the size if needed */
 }
 
-/* Section 2 (Works) Styles */
+/* Section 2 Styles */
 #works {
     padding: 60px 20px; /* Add padding for better spacing */
 }
@@ -133,7 +130,7 @@ section.visible {
     color: var(--white);
 }
 
-/* Section 4 (Contact) Styles */
+/* Section 4 Styles */
 #contact {
     display: flex;
     flex-direction: column;
