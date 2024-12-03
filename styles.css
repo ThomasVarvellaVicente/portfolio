@@ -77,20 +77,20 @@ section.visible {
 
 /* Section 2 Styles */
 #works {
-    padding: 60px 20px; /* Add padding for better spacing */
-    background-color: var(--white); /* Optional: ensures contrast between sections */
+    padding: 60px 20px; 
+    background-color: var(--white);
 }
 
 .project {
     display: flex;
-    flex-direction: column; /* Stack content for smaller screens */
-    justify-content: center; /* Center the content */
-    align-items: center; /* Center vertically */
-    margin-bottom: 40px; /* Add spacing between project cards */
-    background-color: var(--light-blue); /* Background for project cards */
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    margin-bottom: 40px; 
+    background-color: var(--light-blue); 
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    width: 90%; /* Flexible width for responsiveness */
+    width: 70%; 
     max-width: 1000px; /* Limit the max width */
     margin-left: auto;
     margin-right: auto; /* Center the card horizontally */
