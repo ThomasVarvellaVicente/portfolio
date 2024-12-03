@@ -78,22 +78,25 @@ section.visible {
 /* Section 2 Styles */
 #works {
     padding: 60px 20px; /* Add padding for better spacing */
+    background-color: var(--white); /* Optional: ensures contrast between sections */
 }
 
 .project {
     display: flex;
+    flex-direction: column; /* Stack content for smaller screens */
     justify-content: center; /* Center the content */
     align-items: center; /* Center vertically */
     margin-bottom: 40px; /* Add spacing between project cards */
     background-color: var(--light-blue); /* Background for project cards */
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    width: 100%; /* Ensure the project takes up full width */
-    max-width: 1100px; /* Maximum width to prevent it from growing too wide */
+    width: 90%; /* Flexible width for responsiveness */
+    max-width: 1000px; /* Limit the max width */
     margin-left: auto;
     margin-right: auto; /* Center the card horizontally */
     padding: 20px;
     gap: 30px; /* Space between image and text */
+    overflow: hidden; /* Prevent overflow issues */
 }
 
 .project img {
@@ -101,33 +104,50 @@ section.visible {
     height: 150px; /* Fixed height for the image */
     border-radius: 50%;
     object-fit: cover; /* Ensure image fits within its dimensions */
-    margin-right: 20px; /* Space between image and text */
+    margin-bottom: 20px; /* Adds space below the image for stacked layout */
 }
 
 .project h3 {
     width: 100%; /* Ensures the title spans across the whole container */
     text-align: center; /* Centers the title */
     margin-bottom: 15px; /* Adds space between the title and the image/text */
-    color: var(--dark-blue)
+    color: var(--dark-blue);
 }
 
 .project p {
+    text-align: center; /* Centers the paragraph text */
     margin-bottom: 20px;
+    line-height: 1.6; /* Improves readability */
 }
 
 .project button {
     background-color: var(--dark-blue);
     color: var(--white);
     padding: 10px 20px;
+    border: none; /* Removes default button border */
     border-radius: 5px;
     text-decoration: none;
     font-weight: 600;
+    cursor: pointer; /* Adds a pointer cursor on hover */
     transition: background-color 0.3s, color 0.3s;
 }
 
 .project button:hover {
     background-color: var(--scarlet);
     color: var(--white);
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+    .project {
+        flex-direction: row; /* Switch to row layout on larger screens */
+        gap: 30px; /* Maintain spacing between image and text */
+    }
+
+    .project img {
+        margin-bottom: 0; /* Remove stacking margin in row layout */
+        margin-right: 20px; /* Space between image and text in row layout */
+    }
 }
 
 /* Section 4 Styles */
