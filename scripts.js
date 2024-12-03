@@ -1,19 +1,34 @@
-// Fade-in effect when sections come into view
-if (!('IntersectionObserver' in window)) {
-    console.warn("IntersectionObserver is not supported. Showing all sections by default.");
-    document.querySelectorAll('section').forEach(section => section.classList.add('visible')); // Show all sections if unsupported
-} else {
-    const sections = document.querySelectorAll('section');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
+// Intersection Observer to handle fade-in effect on scroll
+const sections = document.querySelectorAll('section');
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible'); // Add fade-in class
+        }
+    });
+}, { threshold: 0.5 });
+
+sections.forEach(section => observer.observe(section));
+
+// Navbar click logic to force fade-in
+document.querySelectorAll('.navbar a').forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault(); // Prevent default anchor behavior
+
+        const targetId = link.getAttribute('href').substring(1); // Get the section id
+        const targetSection = document.getElementById(targetId);
+
+        if (targetSection) {
+            // Scroll to the section
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+
+            // Force fade-in immediately
+            if (!targetSection.classList.contains('visible')) {
+                targetSection.classList.add('visible');
             }
-        });
-    }, { threshold: 0.5 });
-    
-    sections.forEach(section => observer.observe(section));
-}
+        }
+    });
+});
 
 // Navbar active link highlighting on scroll
 const navLinks = document.querySelectorAll('.navbar a');
