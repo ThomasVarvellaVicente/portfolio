@@ -1,18 +1,23 @@
 // Fade-in effect when sections come into view
-const sections = document.querySelectorAll('section');
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
-    });
-}, { threshold: 0.5 });
-
-sections.forEach(section => observer.observe(section));
+if (!('IntersectionObserver' in window)) {
+    console.warn("IntersectionObserver is not supported. Showing all sections by default.");
+    document.querySelectorAll('section').forEach(section => section.classList.add('visible')); // Show all sections if unsupported
+} else {
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    sections.forEach(section => observer.observe(section));
+}
 
 // Navbar active link highlighting on scroll
 const navLinks = document.querySelectorAll('.navbar a');
-const sectionsArray = Array.from(sections);
+const sectionsArray = Array.from(document.querySelectorAll('section'));
 
 window.addEventListener('scroll', () => {
     let currentSection = "";
@@ -31,6 +36,7 @@ window.addEventListener('scroll', () => {
     });
 });
 
+// Fetch and update GitHub user information
 async function updateGitHubInfo() {
     try {
         // Fetch GitHub user data
