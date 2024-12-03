@@ -197,11 +197,13 @@ section.visible {
 /* Scroll Animations */
 section {
     opacity: 0;
-    transition: opacity 1s ease-in-out;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 section.visible {
     opacity: 1;
+    transform: translateY(0);
 }
 
 /* Resume Section */
